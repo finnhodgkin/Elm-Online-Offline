@@ -9250,7 +9250,7 @@ var _user$project$Main$update = F2(
 				return {
 					ctor: '_Tuple2',
 					_0: A2(_user$project$Main$Model, '', _p4),
-					_1: A2(_elm_lang$websocket$WebSocket$send, 'ws://echo.websocket.org', _p3)
+					_1: A2(_elm_lang$websocket$WebSocket$send, 'ws://lfdslkfjslkjflskjdflks80', _p3)
 				};
 			default:
 				return {
@@ -9267,7 +9267,7 @@ var _user$project$Main$NewMessage = function (a) {
 	return {ctor: 'NewMessage', _0: a};
 };
 var _user$project$Main$subscriptions = function (model) {
-	return A2(_elm_lang$websocket$WebSocket$listen, 'ws://echo.websocket.org', _user$project$Main$NewMessage);
+	return A2(_elm_lang$websocket$WebSocket$listen, 'ws://kldsjflksdjflksdjfljksd0', _user$project$Main$NewMessage);
 };
 var _user$project$Main$Send = {ctor: 'Send'};
 var _user$project$Main$Input = function (a) {

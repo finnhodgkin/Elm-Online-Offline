@@ -47,7 +47,7 @@ update msg { input, messages } =
             ( Model newInput messages, Cmd.none )
 
         Send ->
-            ( Model "" messages, WebSocket.send "ws://echo.websocket.org" input )
+            ( Model "" messages, WebSocket.send "ws://localhost:5000" input )
 
         NewMessage str ->
             ( Model input (str :: messages), Cmd.none )
@@ -59,7 +59,7 @@ update msg { input, messages } =
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    WebSocket.listen "ws://echo.websocket.org" NewMessage
+    WebSocket.listen "ws://localhost:5000" NewMessage
 
 
 
