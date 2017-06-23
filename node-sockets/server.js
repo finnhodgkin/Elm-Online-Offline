@@ -4,8 +4,7 @@ const server = new hapi.Server();
 
 server.register(require('inert'), function() {});
 
-server.connection({ port: 4000, labels: ['api'] });
-server.connection({ port: 4001, labels: ['ws'] });
+server.connection({ port: 4000 });
 
 const apiServer = server.select('api');
 
