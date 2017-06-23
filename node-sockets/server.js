@@ -18,7 +18,7 @@ server.start(() => {
   console.log('started');
 });
 
-const ws = new websocket.Server({ port: process.env.PORT || 3000 });
+const ws = new websocket.Server({ server: server.listener });
 
 ws.broadcast = data => {
   console.log('bc');
