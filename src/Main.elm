@@ -47,7 +47,7 @@ update msg { input, messages } =
             ( Model newInput messages, Cmd.none )
 
         Send ->
-            ( Model "" messages, WebSocket.send "ws://localhost:5000" input )
+            ( Model "" ("Me: " ++ input :: messages), WebSocket.send "ws://localhost:5000" input )
 
         NewMessage str ->
             ( Model input (str :: messages), Cmd.none )
@@ -70,7 +70,7 @@ view : Model -> Html Msg
 view model =
     div []
         [ div [] (List.map viewMessage model.messages)
-        , input [ onInput Input ] []
+        , input [ onInput Input, value model.input ] []
         , button [ onClick Send ] [ text "Send" ]
         ]
 
