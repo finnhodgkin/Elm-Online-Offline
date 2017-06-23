@@ -47,7 +47,7 @@ update msg { input, messages } =
             ( Model newInput messages, Cmd.none )
 
         Send ->
-            ( Model "" ("Me: " ++ input :: messages), WebSocket.send "ws://localhost:5000" input )
+            ( Model "" (("Me: " ++ input) :: messages), WebSocket.send "ws://localhost:5000" input )
 
         NewMessage str ->
             ( Model input (str :: messages), Cmd.none )

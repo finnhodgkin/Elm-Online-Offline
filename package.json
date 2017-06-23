@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "hapi": "^16.4.3",
+    "inert": "^4.2.0",
     "websocket": "^1.0.24",
     "ws": "^3.0.0"
   }
