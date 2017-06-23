@@ -47,7 +47,7 @@ update msg { input, messages } =
             ( Model newInput messages, Cmd.none )
 
         Send ->
-            ( Model "" (("Me: " ++ input) :: messages), WebSocket.send "ws://safe-castle-44767.herokuapp.com" input )
+            ( Model "" (("Me: " ++ input) :: messages), WebSocket.send "wss://safe-castle-44767.herokuapp.com" input )
 
         NewMessage str ->
             ( Model input (str :: messages), Cmd.none )
@@ -59,7 +59,7 @@ update msg { input, messages } =
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    WebSocket.listen "ws://safe-castle-44767.herokuapp.com" NewMessage
+    WebSocket.listen "wss://safe-castle-44767.herokuapp.com" NewMessage
 
 
 
